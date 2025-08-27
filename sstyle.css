@@ -25,3 +25,24 @@
    height: 300px;
    object-fit: cover;
 }
+.pricing{
+    transition: transform 0.3s;
+}
+#con .card{
+    height: 100%;
+}
+.pricing:hover{
+    transform: scale(1.03);
+}
+#game h2{
+    text-align: center;
+}
+#game .card{
+    border: none;
+    border-left: 10px solid red;
+    height: 100%;
+    background-color: ghostwhite;
+}
+.bi {
+    padding: 5px;
+}
