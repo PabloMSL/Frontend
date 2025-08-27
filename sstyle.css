@@ -1,0 +1,27 @@
+.hero {
+    background-image: url('https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2024/10/gta-san-andreas-cumple-20-anos-sigue-teniendo-detalles-increibles-no-estan-gta-posteriores-4255655.jpg?tf=3840x');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 8px black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+.hero h1{
+    font-size: 4rem;
+}
+.overlay{
+    background-color: rgba(0,0,0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.card img{
+   height: 300px;
+   object-fit: cover;
+}
