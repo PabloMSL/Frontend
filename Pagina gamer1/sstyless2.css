@@ -1,0 +1,68 @@
+.hero-video {
+    position:"relative";
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+}
+.bg-video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.5);
+}
+.hero-content{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 50%;
+    color: white;
+    padding: 0 1rem;
+}
+h1{
+    font-family: "VT323", monospace;
+    font-weight: 800px;
+}
+h2{
+    font-family: "VT323", monospace;
+    font-weight: 200px;
+}
+section{
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.section-title{
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: chartreuse;
+    text-align: center;
+    font-family: "VT323", monospace;
+}
+.card-body{
+    background-color: gray;
+}
+#res .card{
+    background-color: gray;
+}
+#res img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+
+}
+#entre .card-body{
+    background-color: white;
+}
+#entre img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.navbar-nav a:hover{
+     color: chartreuse;
+}
