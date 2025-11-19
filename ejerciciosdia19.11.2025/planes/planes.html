@@ -1,0 +1,30 @@
+<div class="container-fluid mt-3 bg-light">
+    <div class="row mt-3">
+        <label class="labeltext my-3 text-center" for="selectPlan">Selecciona tu plan de suscripcion</label>
+        <select class="form-select" id="selectPlan" [(ngModel)]="plan">
+            <option value="bas">Basico</option>
+            <option value="est">Estandar</option>
+            <option value="prem">Premium</option>
+        </select>
+    </div>
+    <div class="row border bg-light">
+        <div [ngSwitch]="plan" class="planes">
+            <div *ngSwitchCase="'bas'" class="p-3 my-3">
+                <h1 class="mb-5 border-bottom">Plan Basico</h1>
+                <p class="mb-5">Este es el plan basico, donde se limita el contenido</p>
+                <p><b>Precio: 10$</b></p>
+            </div>
+            <div *ngSwitchCase="'est'" class="p-3 my-3">
+                <h1 class="mb-5 border-bottom">Plan Estandar</h1>
+                <p class="mb-5">Tendras acceso a todo el contenido</p>
+                <p><b>Precio: 15$</b></p>
+            </div>
+            <div *ngSwitchCase="'prem'" class="p-3 my-3">
+                <h1 class="mb-5 border-bottom">Plan Premium</h1>
+                <p class="mb-5">Tendras acceso a todo el contenido, y contenido exclusivo</p>
+                <p><b>Precio: 20$</b></p>
+            </div>
+            <span *ngSwitchDefault>No has seleccionado un plan de suscripcion</span>
+        </div>
+    </div>
+</div>

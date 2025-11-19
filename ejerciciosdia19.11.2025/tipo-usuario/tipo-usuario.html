@@ -1,0 +1,27 @@
+<div class="container-fluid mt-3 bg-light">
+    <div class="row">
+        <label class="labeltext text-center my-4"for="selectPlan">Seleccione su rol de usuario</label>
+        <select class="form-select" id="selectPlan" [(ngModel)]="usuario">
+            <option value="admin">Administrador</option>
+            <option value="edit">Editor</option>
+            <option value="lect">Lector</option>
+        </select>
+    </div>
+    <div class="row border">
+        <div [ngSwitch]="usuario" class="usuarios">
+            <div *ngSwitchCase="'admin'" class="p-3 my-3">
+                <h1 class="mb-5 border-bottom">Eres Administrador</h1>
+                <p class="mb-5">Tienes acceso a todas las funciones y personalizaciones</p>
+            </div>
+            <div *ngSwitchCase="'edit'" class="p-3 my-3">
+                <h1 class="mb-5 border-bottom">Eres un editor</h1>
+                <p class="mb-5">Puedes editar el contenido</p>
+            </div>
+            <div *ngSwitchCase="'lect'" class="p-3 my-3">
+                <h1 class="mb-5 border-bottom">Eres un lector</h1>
+                <p class="mb-5">Solo podras leer nuestro contenido</p>
+            </div>
+            <span *ngSwitchDefault>Seleccione un rol para ver las opciones disponibles</span>
+        </div>
+    </div>
+</div>

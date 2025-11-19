@@ -1,0 +1,19 @@
+<div class="container-fluid mt-3 bg-light">
+    <div class="row" style="padding-left: 33%;">
+        <div class="card p-4">
+            <p class="section-title text-center py-4">Inserte su temperatura</p>
+            <div class="row">
+                <input class="text" type="number" placeholder="Inserte la temperatura" [(ngModel)]="temp">
+                <button class="btn btn-primary my-4" (click)="rango()">Calcular temperatura</button>
+            </div>
+            <div class="row text-center">
+                <div [ngSwitch]="clasificador">
+                    <div *ngSwitchCase="'Caliente'">La temperatura es caliente</div>
+                    <div *ngSwitchCase="'Templado'">La temperatura esta templada</div>
+                    <div *ngSwitchCase="'Frio'">La temperatura es fria</div>
+                    <div *ngSwitchDefault>Inserte la temperatura</div>
+               </div>
+            </div> 
+        </div>
+    </div>
+</div>
