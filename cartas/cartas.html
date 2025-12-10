@@ -1,0 +1,46 @@
+<div class="container text-center my-4">
+    <div *ngIf="inicio" class="inicio-overlay">
+        <div class="inicio-modal">
+            <h2>Bienvenido al juego de cartas</h2>
+            <p>Disfruta</p>
+            <button (click)="quitar()">Iniciar</button>
+        </div>
+  </div>
+  <div *ngIf="ganaste" class="ganaste-overlay">
+        <div class="ganaste-modal">
+            <h2>🎉 ¡GANASTE! 🎉</h2>
+            <p>Lo lograste en {{ intentos }} intentos</p>
+            <button (click)="reiniciar()">Jugar de nuevo</button>
+        </div>
+  </div>
+  <h1 class="mb-4">Adivinanza de Cartas</h1>
+
+  <!-- Cartas en cuadrícula de Bootstrap -->
+  <div class="row justify-content-center g-3">
+    <div class="col-3" *ngFor="let carta of cartas">
+      <div
+        class="card carta-item"
+        [class.volteada]="carta.estaVolteada"
+        [class.emparejada]="carta.estaEmparejada"
+        (click)="clickCarta(carta)"
+      >
+        <div class="card-body d-flex align-items-center justify-content-center p-0">
+          <span *ngIf="carta.estaVolteada || carta.estaEmparejada">{{ carta.icon }}</span>
+          <span *ngIf="!carta.estaVolteada && !carta.estaEmparejada">🟥</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-3 fs-5">Intentos: {{ intentos }}</p>
+
+  <button class="btn btn-primary mt-2" (click)="reiniciar()">Reiniciar Juego</button>
+  <div *ngIf="perdiste" class="perdiste-overlay">
+        <div class="perdiste-modal">
+            <h2>😔 Perdiste... 😔</h2>
+            <p>No lo lograste</p>
+            <button (click)="reiniciar()">Jugar de nuevo</button>
+        </div>
+  </div>
+</div>
+

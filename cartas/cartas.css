@@ -1,0 +1,267 @@
+.carta-item {
+  width: 280px;
+  height: 125px;
+
+  background: linear-gradient(135deg, #c94a4a, #ff4d4d);
+  border-radius: 12px;
+  cursor: pointer;
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.carta-item:not(.emparejada):hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.28);
+}
+
+
+.carta-item .card-body span {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+}
+
+
+.carta-item.volteada {
+  background: linear-gradient(135deg, #63b4ff, #2ba0ff);
+  transform: rotateY(180deg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.carta-item.volteada .card-body span {
+  color: #1e293b;
+}
+
+
+.carta-item.emparejada {
+  background: linear-gradient(135deg, #a3e635, #84cc16);
+  transform: scale(1.07);
+  box-shadow: 0 0 18px #a3e635;
+  cursor: default;
+}
+
+.carta-item.emparejada .card-body span {
+  color: #1a2e05;
+}
+
+.ganaste {
+  color: #22c55e;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-shadow: 0px 0px 6px rgba(34, 197, 94, 0.3);
+}
+
+
+body {
+  background: linear-gradient(135deg, #fff5c8, #ffb3b3);
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s ease;
+}
+/* ============================
+   FONDO OSCURECIDO DEL MODAL
+   ============================ */
+.ganaste-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999; /* por encima de todo */
+  animation: aparecerFondo 0.3s ease;
+}
+
+@keyframes aparecerFondo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ============================
+   VENTANA EMERGENTE
+   ============================ */
+.ganaste-modal {
+  background: white;
+  padding: 25px 35px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: popup 0.35s ease;
+
+  max-width: 300px;
+}
+
+/* Animación de la ventana */
+@keyframes popup {
+  0%   { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.ganaste-modal h2 {
+  color: #16a34a;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.ganaste-modal p {
+  font-size: 1.2rem;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.ganaste-modal button {
+  background: #16a34a;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.ganaste-modal button:hover {
+  transform: scale(1.05);
+  background: #15803d;
+}
+
+
+/* ============================
+   VENTANA EMERGENTE
+   ============================ */
+.perdiste-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999; /* por encima de todo */
+  animation: aparecerFondo 0.3s ease;
+}
+
+@keyframes aparecerFondo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.perdiste-modal {
+  background: white;
+  padding: 25px 35px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: popup 0.35s ease;
+
+  max-width: 300px;
+}
+
+
+.perdiste-modal h2 {
+  color: #16a34a;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.perdiste-modal p {
+  font-size: 1.2rem;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.perdiste-modal button {
+  background: #16a34a;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.perdiste-modal button:hover {
+  transform: scale(1.05);
+  background: #15803d;
+}
+
+/* ============================
+   VENTANA EMERGENTE
+   ============================ */
+.inicio-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999; /* por encima de todo */
+  animation: aparecerFondo 0.3s ease;
+}
+
+@keyframes aparecerFondo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.inicio-modal {
+  background: white;
+  padding: 25px 35px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: popup 0.35s ease;
+
+  max-width: 300px;
+}
+
+
+.inicio-modal h2 {
+  color: #16a34a;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.inicio-modal p {
+  font-size: 1.2rem;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.inicio-modal button {
+  background: #16a34a;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.inicio-modal button:hover {
+  transform: scale(1.05);
+  background: #15803d;
+}
